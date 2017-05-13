@@ -1,0 +1,25 @@
+{
+  "name": "senthaneng",
+  "description": "",
+  "main": "",
+  "authors": [
+    "S.Senthan <senthaneng@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "semantic": "semantic-ui#^2.2.9",
+    "semantic-ui-dropdown": "^2.2.9",
+    "bootstrap": "~3.3.6",
+    "font-awesome": "^4.*",
+    "jquery": "~2.1.4",
+    "angular": "1.4.3"
+  }
+}
