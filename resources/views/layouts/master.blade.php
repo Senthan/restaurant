@@ -21,8 +21,13 @@
 	<script type="text/javascript" src="{{  asset('components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
 
 
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBM8LtJcXEjCABtsGyigU0dCN4agXmvmag"></script>
+   <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBM8LtJcXEjCABtsGyigU0dCN4agXmvmag&callback=initMap">
+    </script>
 
+
+    <!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBM8LtJcXEjCABtsGyigU0dCN4agXmvmag"></script>
+ -->
 
 </body>
 
