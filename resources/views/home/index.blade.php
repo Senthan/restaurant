@@ -13,7 +13,10 @@
         height: 100%;
         margin: 0;
         padding: 0;
-      }
+      } 
+	  #map2 {
+		height: 500px;
+	  }
     </style>
   </head>
   <body>
@@ -26,19 +29,11 @@
 		Admin
 	  </a>
 	</div>  
-    <div class="ui vertical stripe segment" id="access">
-		<div class="ui middle aligned stackable container">
-			<div class="ui text container">
-				<h3 class="ui header centered">Restaurant Location</h3>
-			</div>
-		<div class="ui embed" id="map2"></div>
-		</div>
-	</div>
-	
+
 	<div class="ui vertical stripe segment" >
 	  <div class="ui middle aligned stackable container"> 
 		<div class="ui text container"> 
-			<h3 class="ui header centered"> Restaurant Direction</h3>
+			<h3 class="ui header centered">Direction To Restaurant</h3>
 		</div>
 		<div class="row">
 		  <div class="col-md-8">
@@ -68,6 +63,15 @@
 		</div>
 	  </div>
 	</div>
+	    <div class="ui vertical stripe segment">
+		<div class="ui middle aligned stackable container">
+			<div class="ui text container">
+				<h3 class="ui header centered">Locations of Restaurants</h3>
+			</div>
+		<div class="ui embed" id="map2"></div>
+		</div>
+	</div>
+	
     <script>
       function initMap() {
 	 
