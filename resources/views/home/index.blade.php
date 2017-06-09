@@ -145,7 +145,7 @@
 		
 		var restaurant = document.getElementById('restaurant').value;
 		var addressEnd = codeLatLng(parseFloat(restaurant.latitude), parseFloat(restaurant.longitude));
-		 addressEnd = 'Blk 203, Singapore';
+		 addressEnd = 'Jurong East, Singapore';
         directionsService.route({
           origin: addressCurrent,
           destination: addressEnd,
