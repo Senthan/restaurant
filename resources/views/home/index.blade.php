@@ -1,29 +1,14 @@
-
-
 <!DOCTYPE html>
 <html>
   <head>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
-    <title>Waypoints in directions</title>
+    <title>Restaurant Direction</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.css"/>
+	
     <style>
-      #right-panel {
-        font-family: 'Roboto','sans-serif';
-        line-height: 30px;
-        padding-left: 10px;
-      }
-
-      #right-panel select, #right-panel input {
-        font-size: 15px;
-      }
-
-      #right-panel select {
-        width: 100%;
-      }
-
-      #right-panel i {
-        font-size: 12px;
-      }
+      
       html, body {
         height: 100%;
         margin: 0;
@@ -35,15 +20,6 @@
         width: 70%;
         height: 100%;
       }
-      #right-panel {
-        margin: 20px;
-        border-width: 2px;
-        width: 20%;
-        height: 400px;
-        float: left;
-        text-align: left;
-        padding-top: 0;
-      }
       #directions-panel {
         margin-top: 10px;
         background-color: #FFEE77;
@@ -54,23 +30,50 @@
     </style>
   </head>
   <body>
-  <div id="map2" style="height: 400px;"></div>
-    <div id="map"></div>
-    <div id="right-panel">
-    <div>
-    <b>Select of Travel Restaurant: </b>
-	<select id="restaurant">
-	<option value="null">Select Restaurant</option>
-	@foreach($restaurants as $restaurant)
-	  <option value="{{ $restaurant }}">{{ $restaurant->name }}</option>
-	@endforeach 
-	</select>
-    <br>
-    <input type="submit" id="submit">
-    </div>
-    <div id="directions-panel"></div>
-    </div>
-    <script>
+  
+    <div class="ui pointing menu">
+	  <a href="/" class="active item">
+		Home
+	  </a>
+	  <a href="{{ route('restaurant.index') }}" class="item">
+		Admin
+	  </a>
+	</div>  
+    <div class="ui vertical stripe segment" id="access">
+		<div class="ui middle aligned stackable container">
+			<div class="ui text container">
+				<h3 class="ui header centered">Restaurant Location</h3>
+			</div>
+		<div class="ui embed" id="map2"></div>
+		</div>
+	</div>
+	
+	<div class="ui vertical stripe segment" >
+	  <div class="ui middle aligned stackable container"> 
+		<div class="ui text container"> 
+			<h3 class="ui header centered"> Restaurant Direction</h3>
+		</div>
+		<div class="ui grid">
+		  <div class="ten wide column">
+			<div class="ui embed" id="map" ></div>
+		  </div>
+		  <div class="six wide column">
+			<b>Select of Travel Restaurant: </b>
+			<select id="restaurant">
+			<option value="null">Select Restaurant</option>
+			@foreach($restaurants as $restaurant)
+			  <option value="{{ $restaurant }}">{{ $restaurant->name }}</option>
+			@endforeach 
+			</select>
+			<br>
+			<input type="submit" id="submit">
+			<div id="directions-panel"></div>
+		  </div>
+		</div>
+	  </div>
+	</div>
+	
+<script>
       function initMap() {
 	 
 			var locations = {!! $restaurants !!};
