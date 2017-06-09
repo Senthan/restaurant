@@ -73,7 +73,28 @@
     <script>
       function initMap() {
 	 
-			
+			var locations = {!! $restaurants !!};
+			var map = new google.maps.Map(document.getElementById('map2'), {
+               zoom: 10,
+               center: new google.maps.LatLng(1.28, 103.8),
+               mapTypeId: google.maps.MapTypeId.ROADMAP
+             });
+             var infowindow = new google.maps.InfoWindow();
+             var marker, i;
+             for (i = 0; i < locations.length; i++) {  
+               marker = new google.maps.Marker({
+                 position: new google.maps.LatLng(locations[i]['latitude'], locations[i]['longitude']),
+                 map: map
+               });
+               google.maps.event.addListener(marker, 'click', (function(marker, i) {
+                 return function() {
+                   infowindow.setContent(locations[i]['name']);
+                   infowindow.open(map, marker);
+                 }
+               })(marker, i));
+             }
+ 
+ 
         var directionsService = new google.maps.DirectionsService;
         var directionsDisplay = new google.maps.DirectionsRenderer;
         var map = new google.maps.Map(document.getElementById('map'), {
