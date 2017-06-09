@@ -72,8 +72,7 @@
 		</div>
 	  </div>
 	</div>
-	
-<script>
+    <script>
       function initMap() {
 	 
 			var locations = {!! $restaurants !!};
@@ -147,12 +146,13 @@
             });
 		
 		var restaurant = document.getElementById('restaurant').value;
-		var addressEnd = codeLatLng(parseFloat(restaurant.latitude), parseFloat(restaurant.longitude));
+//		var addressEnd = codeLatLng(parseFloat(restaurant.latitude), parseFloat(restaurant.longitude));
 		 addressEnd = 'Jurong East, Singapore';
+		 addressCurrent = 'Ang mo kio, Singapore';
         directionsService.route({
           origin: addressCurrent,
           destination: addressEnd,
-          waypoints: waypts,
+          waypoints: [],
           optimizeWaypoints: true,
           travelMode: 'DRIVING'
         }, function(response, status) {
