@@ -46,7 +46,7 @@
 		  </div>
 		  <div class="col-md-4">
 			<form class="ui form">
-				  <h4 class="ui dividing header">Shipping Information</h4>
+				  <h4 class="ui dividing header">Restaurant Information</h4>
 				  <div class="field">
 					<label>Select of Travel Restaurant</label>
 					  <div class="field">
