@@ -8,3 +8,5 @@ In this application we can categories this restaurant then from our current loca
 
 Application URL :- http://restaurant.senthaneng.com/
 
+
+Admin panel url : http://restaurant.senthaneng.com/admin/restaurant
